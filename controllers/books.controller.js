@@ -1,19 +1,18 @@
 'use strict';
 
-const userModel = require("../models/user.model");
+const userModel = require('../models/user.model');
 
 const booksController=(req,res)=>{
-    const searchQuery=req.searchQuery.email;
-    userModel.findOne({email:searchQuery},(user)=>{
-        if(!user){
-            res.send('user not found')
+    const searchQuery=req.query.email
+    userModel.findOne({email:searchQuery},(error,user)=>{
+        if(error){
+            res.send(error.message)
 
         }
-        else{
-            res.json(user.books)
-        }
-    })
-
+       
+            res.send(user.books);
+        
+    });
 }
 
 module.exports=booksController;

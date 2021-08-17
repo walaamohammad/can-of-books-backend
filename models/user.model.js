@@ -29,7 +29,7 @@ const ForrestGump={
 const seedUser=()=>{
     const w=new userModel({
 email:'walaaosamaajaj2013@gmail.com',
-books:[DaVinciCode , ForrestGump ,ForrestGump]
+books:[DaVinciCode , TheLostSymbole ,ForrestGump]
     });
     w.save();
     return(w);
