@@ -6,6 +6,8 @@ const cors = require('cors');
 // const jwt = require('jsonwebtoken');
 // const jwksClient = require('jwks-rsa');
 const mongoose=require('mongoose')
+const homeController=require('./controllers/home.controller')
+const booksController=require('./controllers/books.controller')
 const app = express();
 app.use(cors());
 
@@ -20,5 +22,8 @@ const PORT = process.env.PORT || 3001;
 app.get('/test', (request, response) => {
  
 })
+
+app.get('/',homeController);
+app.get('/books',booksController);
 
  app.listen(PORT, () => console.log(`listening on ${PORT}`));

@@ -1,4 +1,8 @@
 'use strict';
 
 const seedUser=require('../models/user.model');
-const userObject=seedUser();
+const homeController=(req,res)=>{
+    res.json(userObject)
+}
+
+module.exports=homeController;
